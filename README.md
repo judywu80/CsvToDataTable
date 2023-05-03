@@ -17,7 +17,7 @@ via List in winform <br>
 2. 各欄位都可以排序，並且有升冪、降冪(5.1既定功能)：
 DataSource=List<T>; 需使用List泛形排序(OrderBy、Delegate、Labmda…)
 
-- [存資料表]作業方向參考：
+- [存資料表]：
 1. 存入實體資料表方式：
 寫入實體Table之前，採清除原資料表。
 使用SQL語法直接寫到實體資料表
@@ -27,7 +27,7 @@ DataSource=List<T>; 需使用List泛形排序(OrderBy、Delegate、Labmda…)
 DataGridView → Table
 List<T> → Table
 
-- [開Table檔]作業方向參考：(本功能僅作資料顯示，不作資料更新)
+- [開Table檔]：(本功能僅作資料顯示，不作資料更新)
 使用DataReader -> DataTable。
 DataAdapter.Fill(DataTable); <br>
 DataAdapter.Fill(DataSet , DataTable);  ->  DataTable=DataSet.DataTable[0] <br>
@@ -48,16 +48,16 @@ Form基本架構：原置放ListBox 作為載入文字檔用；文字檔轉換�
 ![image](https://user-images.githubusercontent.com/122083665/235310165-2ff6004e-5d15-4399-8f69-60e812cd9deb.png)
 
 - 進階級：
-1. 利用「存文字檔」 Button事件，將DataGridView內容寫入文字檔test.txt於專題目錄內，並以ComBoBox元件，供使用者選擇該文字檔的分隔符號(逗號、分號、空白、TAB、冒號)，見如下二圖。
+1. 利用「存文字檔」 Button事件，將DataGridView內容寫入文字檔test.txt於專題目錄內，並以ComboBox元件，供使用者選擇該文字檔的分隔符號(逗號、分號、空白、TAB、冒號)，見如下二圖。
 ![image](https://user-images.githubusercontent.com/122083665/235310722-e31bd7e2-5e47-4c6b-87a2-4002100e060f.png)
 
-2. 讓各欄位都可以排序，並且可以有升冪、降冪，DataGridView有預設排序功能，調整使其適用於本範例。
+2. 各欄位都可以排序，並且可以有升冪、降冪，DataGridView有預設排序功能。
 
 **外加功能(Option)**
-- 本題改採用類別作法，由主程式提供檔案名稱(B01.csv)，後續的文字分割以及置入DataGridView工作(或採DataSource)，皆由該類別方法完成。
+- 改採用類別作法，由主程式提供檔案名稱(B01.csv)，後續的文字分割以及置入DataGridView工作(或採DataSource)，皆由該類別方法完成。
 
-- 外加泛型自訂排序功能：（任選部份排序功能）
-※建議使用List<T>，<T>型態自選，排序表達方式參考：
+- 外加泛型自訂排序功能：
+※使用List<T>，<T>型態自選，排序表達方式參考：
 1. 自訂的 Class 繼承自 IComparable 以便具有 Sorting 功能 (List.Sort);
 2. 定義 數個Class Compare 預設為各欄位作排序，如compareByName….
 3. 使用委託 (Delegate) 排序
